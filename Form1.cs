@@ -13,6 +13,8 @@ namespace Fortnite_BALLS
         int targetX = 966;
         int targetY = 570;
 
+        bool respawnClick = true;
+
         public Form1()
         {
             InitializeComponent();
@@ -84,7 +86,7 @@ namespace Fortnite_BALLS
 
         void ClickMouseAtLocation(int x, int y)
         {
-
+            if (respawnClick == false) return;
             int offsetY = -60;
 
             for (int i = 0; i < 10; i++)
@@ -112,7 +114,7 @@ namespace Fortnite_BALLS
             while (true)
             {
 
-                
+
                 this.Invalidate();
 
                 Thread.Sleep(100);
@@ -128,6 +130,11 @@ namespace Fortnite_BALLS
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             int.TryParse(textBox2.Text, out targetX);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            respawnClick = checkBox1.Checked;
         }
     }
 }

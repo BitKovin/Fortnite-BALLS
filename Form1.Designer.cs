@@ -33,6 +33,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // button1
@@ -82,11 +83,25 @@
             label2.TabIndex = 4;
             label2.Text = "not running";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(158, 34);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(97, 19);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "respawn click";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(264, 171);
+            Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -106,5 +121,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label2;
+        private CheckBox checkBox1;
     }
 }
